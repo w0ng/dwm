@@ -1,0 +1,100 @@
+URL: http://dwm.suckless.org/patches/noborder
+This patch removes the border when there is just one window visible in tiled or
+monocle layout.
+
+diff -r 6f54bd1ef439 dwm.c
+--- a/dwm.c	Wed Jan 04 13:30:12 2012 +0100
++++ b/dwm.c	Sun Feb 12 09:32:38 2012 +0100
+@@ -1191,7 +1191,7 @@
+ 
+ void
+ monocle(Monitor *m) {
+-	unsigned int n = 0;
++	unsigned int n = 0, r = 0;
+ 	Client *c;
+ 
+ 	for(c = m->clients; c; c = c->next)
+@@ -1199,8 +1199,17 @@
+ 			n++;
+ 	if(n > 0) /* override layout symbol */
+ 		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
+-	for(c = nexttiled(m->clients); c; c = nexttiled(c->next))
+-		resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, False);
++	for(c = nexttiled(m->clients); c; c = nexttiled(c->next)) {
++		/* remove border when in monocle layout */
++		if(c->bw) {
++			c->oldbw = c->bw;
++			c->bw = 0;
++			r = 1;
++		}
++		resize(c, m->wx, m->wy, m->ww - (2 * c->bw), m->wh - (2 * c->bw), False);
++		if(r)
++			resizeclient(c, m->wx, m->wy, m->ww - (2 * c->bw), m->wh - (2 * c->bw));
++	}
+ }
+ 
+ void
+@@ -1703,7 +1712,7 @@
+ 
+ void
+ tile(Monitor *m) {
+-	unsigned int i, n, h, mw, my, ty;
++	unsigned int i, n, h, mw, my, ty, r;
+ 	Client *c;
+ 
+ 	for(n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+@@ -1714,17 +1723,36 @@
+ 		mw = m->nmaster ? m->ww * m->mfact : 0;
+ 	else
+ 		mw = m->ww;
+-	for(i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
++	for(i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++, r = 0) {
++		if(n == 1) {
++			if (c->bw) {
++				/* remove border when only one window is on the current tag */
++				c->oldbw = c->bw;
++				c->bw = 0;
++				r = 1;
++			}
++		}
++		else if(!c->bw && c->oldbw) {
++			/* restore border when more than one window is displayed */
++			c->bw = c->oldbw;
++			c->oldbw = 0;
++			r = 1;
++		}
+ 		if(i < m->nmaster) {
+ 			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
+ 			resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), False);
++			if(r)
++				resizeclient(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw));
+ 			my += HEIGHT(c);
+ 		}
+ 		else {
+ 			h = (m->wh - ty) / (n - i);
+ 			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), False);
++			if(r)
++				resizeclient(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw));
+ 			ty += HEIGHT(c);
+ 		}
++	}
+ }
+ 
+ void
+@@ -1740,9 +1768,15 @@
+ 	if(!selmon->sel)
+ 		return;
+ 	selmon->sel->isfloating = !selmon->sel->isfloating || selmon->sel->isfixed;
+-	if(selmon->sel->isfloating)
++	if(selmon->sel->isfloating) {
++		/* restore border when moving window into floating mode */
++		if(!selmon->sel->bw && selmon->sel->oldbw) {
++			selmon->sel->bw = selmon->sel->oldbw;
++			selmon->sel->oldbw = 0;
++		}
+ 		resize(selmon->sel, selmon->sel->x, selmon->sel->y,
+ 		       selmon->sel->w, selmon->sel->h, False);
++	}
+ 	arrange(selmon);
+ }
+ 
