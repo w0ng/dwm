@@ -2,4 +2,5 @@
 dwm.desktop
 dwm.install
 pkg/*
+PKGBUILD
 src/*
