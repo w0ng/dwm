@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
+static const char font[]            = "-*-terminus2-medium-r-*-*-12-*-*-*-*-*-*-*";
 #define NUMCOLORS 9 
 static const char colors[NUMCOLORS][ColLast][9] = {
   // border foreground background
@@ -39,11 +39,11 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 #include "gaplessgrid.c"
 static const Layout layouts[] = {
   /* symbol     arrange function */
-  { "[T]",      tile },    /* first entry is default */
-  { "[F]",      NULL },    /* no layout function means floating behavior */
-  { "[M]",      monocle },
-  { "[B]",      bstack },
-  { "[G]",      gaplessgrid },
+  { "Ë",      tile },    /* first entry is default */
+  { "Í",      NULL },    /* no layout function means floating behavior */
+  { "È",      monocle },
+  { "Ì",      bstack },
+  { "Î",      gaplessgrid },
 };
 
 /* key definitions */
@@ -94,7 +94,7 @@ static Key keys[] = {
   { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
   { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
   { MODKEY,                       XK_b,      setlayout,      {.v = &layouts[3]} },
-  { MODKEY,                       XK_g,      setlayout,      {.v = &layouts[3]} },
+  { MODKEY,                       XK_g,      setlayout,      {.v = &layouts[4]} },
   { MODKEY,                       XK_space,  setlayout,      {0} },
   { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
   { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
