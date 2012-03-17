@@ -21,7 +21,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "è 1", "ø 2", "û 3", "ù 4", "ü 5", "ü 6", "ü 7", "ü 8", "Æ 9" };
+static const char *tags[] = { "À 1", "Á 2", "Â 3", "Ã 4", "Ä 5", "Å 6", "Æ 7", "Ç 8", "È 9" };
 
 static const Rule rules[] = {
   /* class      instance    title       tags mask     isfloating   monitor */
@@ -39,11 +39,11 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 #include "gaplessgrid.c"
 static const Layout layouts[] = {
   /* symbol     arrange function */
-  { "Ë",      tile },    /* first entry is default */
-  { "Í",      NULL },    /* no layout function means floating behavior */
-  { "È",      monocle },
+  { "É",      tile },    /* first entry is default */
+  { "Ê",      NULL },    /* no layout function means floating behavior */
+  { "Ë",      monocle },
   { "Ì",      bstack },
-  { "Î",      gaplessgrid },
+  { "Í",      gaplessgrid },
 };
 
 /* key definitions */
