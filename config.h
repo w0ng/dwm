@@ -59,7 +59,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char  *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
-static const char *termcmd[]  = { "urxvt", NULL };
+static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", NULL };
 static const char *voldncmd[] = { "amixer", "-q", "set", "Master", "5%-", NULL };
 static const char *mpctog[] = { "ncmpcpp", "toggle", NULL };
