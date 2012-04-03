@@ -12,7 +12,7 @@ static const char colors[NUMCOLORS][ColLast][9] = {
   { "#073642", "#859900", "#002b36" }, // 4 = green
   { "#073642", "#b58900", "#002b36" }, // 5 = yellow 
   { "#073642", "#268bd2", "#002b36" }, // 6 = blue
-  { "#073642", "#d33682", "#002b36" }, // 7 = magenta
+  { "#073642", "#6c71c4", "#002b36" }, // 7 = magenta
   { "#073642", "#2aa198", "#002b36" }, // 8 = cyan
 };
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
