@@ -5,15 +5,15 @@ static const char font[]            = "-*-terminus2-medium-r-*-*-12-*-*-*-*-*-*-
 #define NUMCOLORS 9 
 static const char colors[NUMCOLORS][ColLast][9] = {
   // border foreground background
-  { "#292929", "#888888", "#151515" }, // 0 = normal (grey on black)
-  { "#fad07a", "#e8e8d3", "#151515" }, // 1 = selected (white on black)
-  { "#cf6a4c", "#151515", "#fad07a" }, // 2 = urgent (black on yellow)
-  { "#292929", "#cf6a4c", "#151515" }, // 3 = red
-  { "#292929", "#99ad6a", "#151515" }, // 4 = green
-  { "#292929", "#fad07a", "#151515" }, // 5 = yellow 
-  { "#292929", "#8197bf", "#151515" }, // 6 = blue
-  { "#292929", "#8787af", "#151515" }, // 7 = magenta
-  { "#292929", "#668799", "#151515" }, // 8 = cyan
+  { "#073642", "#657b83", "#002b36" }, // 0 = normal (grey on black)
+  { "#b58900", "#fdf6e3", "#002b36" }, // 1 = selected (white on black)
+  { "#dc322f", "#002b36", "#b58900" }, // 2 = urgent (black on yellow)
+  { "#073642", "#dc322f", "#002b36" }, // 3 = red
+  { "#073642", "#859900", "#002b36" }, // 4 = green
+  { "#073642", "#b58900", "#002b36" }, // 5 = yellow 
+  { "#073642", "#268bd2", "#002b36" }, // 6 = blue
+  { "#073642", "#d33682", "#002b36" }, // 7 = magenta
+  { "#073642", "#2aa198", "#002b36" }, // 8 = cyan
 };
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
