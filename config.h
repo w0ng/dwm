@@ -2,18 +2,24 @@
 
 /* appearance */
 static const char font[]            = "-*-terminus2-medium-r-*-*-12-*-*-*-*-*-*-*";
-#define NUMCOLORS 9 
-static const char colors[NUMCOLORS][ColLast][9] = {
+#define NUMCOLORS 15
+static const char colors[NUMCOLORS][ColLast][8] = {
   // border foreground background
-  { "#073642", "#657b83", "#002b36" }, // 0 = normal (grey on black)
-  { "#b58900", "#fdf6e3", "#002b36" }, // 1 = selected (white on black)
-  { "#dc322f", "#002b36", "#b58900" }, // 2 = urgent (black on yellow)
-  { "#073642", "#dc322f", "#002b36" }, // 3 = red
-  { "#073642", "#859900", "#002b36" }, // 4 = green
-  { "#073642", "#b58900", "#002b36" }, // 5 = yellow 
-  { "#073642", "#268bd2", "#002b36" }, // 6 = blue
-  { "#073642", "#6c71c4", "#002b36" }, // 7 = magenta
-  { "#073642", "#2aa198", "#002b36" }, // 8 = cyan
+  { "#073642", "#657b83", "#002b36" }, // 1 = normal (grey on black)
+  { "#b58900", "#eee8d5", "#002b36" }, // 2 = selected (white on black)
+  { "#dc322f", "#002b36", "#b58900" }, // 3 = urgent (black on yellow)
+  { "#073642", "#93a1a1", "#004354" }, // 4 = 
+  { "#073642", "#004354", "#002b36" }, // 5 = 
+  { "#073642", "#87d7ff", "#005f87" }, // 6 =
+  { "#073642", "#005f87", "#004354" }, // 7 =
+  { "#073642", "#aae3ff", "#0087af" }, // 8 =
+  { "#073642", "#0087af", "#005f87" }, // 9 =
+  { "#073642", "#005f5f", "#87d7ff" }, // a
+  { "#073642", "#87d7ff", "#0087af" }, // b
+  { "#073642", "#002b36", "#eee8d5" }, // c
+  { "#073642", "#eee8d5", "#87d7ff" }, // d
+  { "#073642", "#002b36", "#eee8d5" }, // e
+  { "#073642", "#657b83", "#004354" }, // f
 };
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -21,7 +27,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "À", "Á", "Â", "Ã", "Ä", "Å", "Æ", "Ç", "È " };
+static const char *tags[] = { "À", "Á", "Â", "Ã", "Ä", "Å", "Æ", "Ç", "È Û" };
 
 static const Rule rules[] = {
   /* class      instance    title       tags mask     isfloating   monitor */
@@ -39,11 +45,11 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 #include "gaplessgrid.c"
 static const Layout layouts[] = {
   /* symbol     arrange function */
-  { "É  Û",      tile },    /* first entry is default */
-  { "Ê  Û",      NULL },    /* no layout function means floating behavior */
-  { "Ë  Û",      monocle },
-  { "Ì  Û",      bstack },
-  { "Í  Û",      gaplessgrid },
+  { "É Û",      tile },    /* first entry is default */
+  { "Ê Û",      NULL },    /* no layout function means floating behavior */
+  { "Ë Û",      monocle },
+  { "Ì Û",      bstack },
+  { "Í Û",      gaplessgrid },
 };
 
 /* key definitions */
