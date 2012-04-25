@@ -16,10 +16,10 @@ static const char colors[NUMCOLORS][ColLast][8] = {
   { "#073642", "#0087af", "#005f87" }, // 9 =
   { "#073642", "#005f5f", "#87d7ff" }, // a
   { "#073642", "#87d7ff", "#0087af" }, // b
-  { "#073642", "#002b36", "#eee8d5" }, // c
-  { "#073642", "#eee8d5", "#87d7ff" }, // d
-  { "#073642", "#002b36", "#eee8d5" }, // e
-  { "#073642", "#657b83", "#004354" }, // f
+  { "#073642", "#0087af", "#87d7ff" }, // c
+  { "#073642", "#005f87", "#0087af" }, // d
+  { "#073642", "#004354", "#005f87" }, // e
+  { "#073642", "#002b36", "#004354" }, // f
 };
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
