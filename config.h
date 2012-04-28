@@ -2,24 +2,15 @@
 
 /* appearance */
 static const char font[]            = "-*-terminus2-medium-r-*-*-12-*-*-*-*-*-*-*";
-#define NUMCOLORS 15
+#define NUMCOLORS 6
 static const char colors[NUMCOLORS][ColLast][8] = {
   // border foreground background
   { "#073642", "#657b83", "#002b36" }, // 1 = normal (grey on black)
   { "#b58900", "#eee8d5", "#002b36" }, // 2 = selected (white on black)
   { "#dc322f", "#002b36", "#b58900" }, // 3 = urgent (black on yellow)
-  { "#073642", "#93a1a1", "#004354" }, // 4 = 
-  { "#073642", "#004354", "#002b36" }, // 5 = 
-  { "#073642", "#87d7ff", "#005f87" }, // 6 =
-  { "#073642", "#005f87", "#004354" }, // 7 =
-  { "#073642", "#aae3ff", "#0087af" }, // 8 =
-  { "#073642", "#0087af", "#005f87" }, // 9 =
-  { "#073642", "#005f5f", "#87d7ff" }, // a
-  { "#073642", "#87d7ff", "#0087af" }, // b
-  { "#073642", "#0087af", "#87d7ff" }, // c
-  { "#073642", "#005f87", "#0087af" }, // d
-  { "#073642", "#004354", "#005f87" }, // e
-  { "#073642", "#002b36", "#004354" }, // f
+  { "#073642", "#839496", "#073642" }, // 4 = lightgrey on brightblack
+  { "#073642", "#073642", "#002b36" }, // 5 = brightblack on black
+  { "#073642", "#002b36", "#073642" }, // 6 = black onb brightblack
 };
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
