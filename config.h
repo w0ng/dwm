@@ -60,19 +60,17 @@ static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", NULL };
 static const char *voldncmd[] = { "amixer", "-q", "set", "Master", "5%-", NULL };
 static const char *mpctog[] = { "ncmpcpp", "toggle", NULL };
-static const char *mpcstop[] = { "ncmpcpp", "stop", NULL };
 static const char *mpcprev[] = { "ncmpcpp", "prev", NULL };
 static const char *mpcnext[] = { "ncmpcpp", "next", NULL };
 
 #include "push.c"
 static Key keys[] = {
   /* modifier                     key        function        argument */
-  { MODKEY,                       XK_Insert, spawn,          {.v = mpctog } },
-  { MODKEY,                       XK_Delete, spawn,          {.v = mpcstop } },
-  { MODKEY,                       XK_Home,   spawn,          {.v = mpcprev } },
-  { MODKEY,                       XK_End,    spawn,          {.v = mpcnext } },
-  { MODKEY,                       XK_Prior,  spawn,          {.v = volupcmd } },
-  { MODKEY,                       XK_Next,   spawn,          {.v = voldncmd } },
+  { MODKEY,                       XK_backslash, spawn,       {.v = mpctog } },
+  { MODKEY,                       XK_bracketleft, spawn,     {.v = mpcprev } },
+  { MODKEY,                       XK_bracketright, spawn,    {.v = mpcnext } },
+  { MODKEY,                       XK_semicolon, spawn,       {.v = voldncmd } },
+  { MODKEY,                       XK_apostrophe, spawn,      {.v = volupcmd } },
   { MODKEY,                       XK_o,      spawn,          {.v = dmenucmd } },
   { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
   { MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
