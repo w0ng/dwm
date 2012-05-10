@@ -66,7 +66,7 @@ static const char *mpcnext[] = { "ncmpcpp", "next", NULL };
 #include "push.c"
 static Key keys[] = {
   /* modifier                     key        function        argument */
-  { MODKEY,                       XK_backslash, spawn,       {.v = mpctog } },
+  { MODKEY,                       XK_slash, spawn,       {.v = mpctog } },
   { MODKEY,                       XK_bracketleft, spawn,     {.v = mpcprev } },
   { MODKEY,                       XK_bracketright, spawn,    {.v = mpcnext } },
   { MODKEY,                       XK_semicolon, spawn,       {.v = voldncmd } },
