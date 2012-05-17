@@ -1,3 +1,4 @@
+*.tar.gz
 *.tar.xz
 dwm.desktop
 dwm.install
