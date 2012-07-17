@@ -18,26 +18,27 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "À", "Á", "Â", "È", "Ã", "Ä " };
+static const char *tags[] = { "Ç", "À", "Á ", "Â", "È", "Ã ", "Ä", "Å", "Æ " };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating  iscentred   monitor */
-	{ "Gcolor2",  NULL,       NULL,       0,            True,       True,      -1 },
-	{ "XFontSel", NULL,       NULL,       0,            True,       True,      -1 },
-	{ "Xfd",      NULL,       NULL,       0,            True,       True,      -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 2,       False,      False,      -1 },
-	{ "URxvt",    "chatmail", NULL,       1 << 3,       False,      False,      -1 },
-	{ "Gvim",     NULL,       NULL,       1 << 4,       False,      False,      -1 },
-	{ "mplayer2", NULL,       NULL,       1 << 5,       False,      False,      -1 },
-	{ "Zathura",  NULL,       NULL,       1 << 6,       False,      False,      -1 },
-	{ "libreoffice-calc",NULL,NULL,       1 << 6,       False,      False,      -1 },
-	{ "libreoffice-impress",NULL,NULL,    1 << 6,       False,      False,      -1 },
-	{ "libreoffice-startcenter",NULL,NULL,1 << 6,       False,      False,      -1 },
-	{ "libreoffice-writer",NULL,NULL,     1 << 6,       False,      False,      -1 },
-	{ "Gbdfed",   NULL,       NULL,       1 << 7,       True,       True,       -1 },
-	{ "Gimp",     NULL,       NULL,       1 << 7,       True,       False,      -1 },
-	{ "fontforge",NULL,       NULL,       1 << 7,       True,       True,       -1 },
-	{ "inkscape", NULL,       NULL,       1 << 7,       True,       False,      -1 },
+	{ "Gcolor2",  NULL,       NULL,       0,            True,       True,       -1 },
+	{ "XFontSel", NULL,       NULL,       0,            True,       True,       -1 },
+	{ "Xfd",      NULL,       NULL,       0,            True,       True,       -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 1,       False,      False,      -1 },
+	{ "URxvt",    "chatmail", NULL,       1 << 2,       False,      False,      -1 },
+	{ "Gvim",     NULL,       NULL,       1 << 3,       False,      False,      -1 },
+	{ "mplayer2", NULL,       NULL,       1 << 4,       True,      False,      -1 },
+	{ "Zathura",  NULL,       NULL,       1 << 5,       False,      False,      -1 },
+	{ "libreoffice-calc",NULL,NULL,       1 << 5,       False,      False,      -1 },
+	{ "libreoffice-impress",NULL,NULL,    1 << 5,       False,      False,      -1 },
+	{ "libreoffice-startcenter",NULL,NULL,1 << 5,       False,      False,      -1 },
+	{ "libreoffice-writer",NULL,NULL,     1 << 5,       False,      False,      -1 },
+	{ "Gbdfed",   NULL,       NULL,       1 << 6,       True,       True,       -1 },
+	{ "Gimp",     NULL,       NULL,       1 << 6,       True,       False,      -1 },
+	{ "fontforge",NULL,       NULL,       1 << 6,       True,       True,       -1 },
+	{ "inkscape", NULL,       NULL,       1 << 6,       True,       False,      -1 },
+	{ "URxvt",    "ranger",   NULL,       1 << 7,       False,      False,      -1 },
 };
 
 /* layout(s) */
@@ -116,12 +117,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,       XK_period,        tagmon,         {.i = +1 } },
 	TAGKEYS(                  XK_1,                             0)
 	TAGKEYS(                  XK_2,                             1)
-	TAGKEYS(                  XK_q,                             2)
-	TAGKEYS(                  XK_w,                             3)
-	TAGKEYS(                  XK_e,                             4)
-	TAGKEYS(                  XK_a,                             5)
-	TAGKEYS(                  XK_s,                             6)
-	TAGKEYS(                  XK_d,                             7)
+	TAGKEYS(                  XK_3,                             2)
+	TAGKEYS(                  XK_q,                             3)
+	TAGKEYS(                  XK_w,                             4)
+	TAGKEYS(                  XK_e,                             5)
+	TAGKEYS(                  XK_a,                             6)
+	TAGKEYS(                  XK_s,                             7)
+	TAGKEYS(                  XK_d,                             8)
 	{ MODKEY|ShiftMask,       XK_z,             quit,           {0} },
 };
 
