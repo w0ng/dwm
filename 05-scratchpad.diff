@@ -1,0 +1,64 @@
+diff -up a/dwm.c b/dwm.c
+--- a/dwm.c	2012-07-17 17:38:27.526859614 +1000
++++ b/dwm.c	2012-07-17 17:42:30.875541281 +1000
+@@ -253,6 +253,7 @@ static int xerror(Display *dpy, XErrorEv
+ static int xerrordummy(Display *dpy, XErrorEvent *ee);
+ static int xerrorstart(Display *dpy, XErrorEvent *ee);
+ static void zoom(const Arg *arg);
++static void togglescratch(const Arg *arg);
+ 
+ /* variables */
+ static const char broken[] = "broken";
+@@ -289,6 +290,8 @@ static Window root;
+ /* configuration, allows nested code to access above variables */
+ #include "config.h"
+ 
++static unsigned int scratchtag = 1 << LENGTH(tags);
++
+ /* compile-time check if all tags fit into an unsigned int bit array. */
+ struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };
+ 
+@@ -1187,6 +1190,14 @@ manage(Window w, XWindowAttributes *wa)
+ 	           && (c->x + (c->w / 2) < c->mon->wx + c->mon->ww)) ? bh : c->mon->my);
+ 	c->bw = borderpx;
+ 
++	if(!strcmp(c->name, scratchpadname)) {
++		c->mon->tagset[c->mon->seltags] |= c->tags = scratchtag;
++		c->isfloating = True;
++		c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
++		c->y = c->mon->wy + (c->mon->wh / 2 - HEIGHT(c) / 2);
++	}
++	else
++		c->tags &= TAGMASK;
+ 	wc.border_width = c->bw;
+ 	XConfigureWindow(dpy, w, CWBorderWidth, &wc);
+     XSetWindowBorder(dpy, w, dc.colors[0][ColBorder]);
+@@ -2213,6 +2224,28 @@ zoom(const Arg *arg) {
+ 	pop(c);
+ }
+ 
++void
++togglescratch(const Arg *arg) {
++	Client *c = NULL;
++	unsigned int found = 0;
++
++	for(c = selmon->clients; c && !(found = c->tags & scratchtag); c = c->next);
++	if(found) {
++		unsigned int newtagset = selmon->tagset[selmon->seltags] ^ scratchtag;
++		if(newtagset) {
++			selmon->tagset[selmon->seltags] = newtagset;
++			focus(NULL);
++			arrange(selmon);
++		}
++		if(ISVISIBLE(c)) {
++			focus(c);
++			restack(selmon);
++		}
++	}
++	else
++		spawn(arg);
++}
++
+ int
+ main(int argc, char *argv[]) {
+ 	if(argc == 2 && !strcmp("-v", argv[1]))
