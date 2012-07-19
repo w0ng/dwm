@@ -22,6 +22,7 @@ static const char *tags[] = { "Ç", "À", "Á ", "Â", "È", "Ã ", "Ä", "Å", 
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating  iscentred   monitor */
+	{ "feh",      NULL,       NULL,       0,            True,       True,       -1 },
 	{ "Gcolor2",  NULL,       NULL,       0,            True,       True,       -1 },
 	{ "XFontSel", NULL,       NULL,       0,            True,       True,       -1 },
 	{ "Xfd",      NULL,       NULL,       0,            True,       True,       -1 },
