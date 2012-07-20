@@ -18,28 +18,29 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "Ç", "À", "Á ", "Â", "È", "Ã ", "Ä", "Å", "Æ " };
+static const char *tags[] = { "À", "Á", "Â", "Ã", "È", "Ä", "Å", "Æ","Ç " };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating  iscentred   monitor */
 	{ "feh",      NULL,       NULL,       0,            True,       True,       -1 },
 	{ "Gcolor2",  NULL,       NULL,       0,            True,       True,       -1 },
+	{ "Lxappearance",NULL,    NULL,       0,            True,       True,       -1 },
 	{ "XFontSel", NULL,       NULL,       0,            True,       True,       -1 },
 	{ "Xfd",      NULL,       NULL,       0,            True,       True,       -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 1,       False,      False,      -1 },
-	{ "URxvt",    "chatmail", NULL,       1 << 2,       False,      False,      -1 },
-	{ "Gvim",     NULL,       NULL,       1 << 3,       False,      False,      -1 },
+	{ "Firefox",  NULL,       NULL,       1,            False,      False,      -1 },
+	{ "URxvt",    "chatmail", NULL,       1 << 1,       False,      False,      -1 },
+	{ "Gvim",     NULL,       NULL,       1 << 2,       False,      False,      -1 },
+	{ "Zathura",  NULL,       NULL,       1 << 3,       False,      False,      -1 },
+	{ "libreoffice-calc",NULL,NULL,       1 << 3,       False,      False,      -1 },
+	{ "libreoffice-impress",NULL,NULL,    1 << 3,       False,      False,      -1 },
+	{ "libreoffice-startcenter",NULL,NULL,1 << 3,       False,      False,      -1 },
+	{ "libreoffice-writer",NULL,NULL,     1 << 3,       False,      False,      -1 },
 	{ "mplayer2", NULL,       NULL,       1 << 4,       True,      False,      -1 },
-	{ "Zathura",  NULL,       NULL,       1 << 5,       False,      False,      -1 },
-	{ "libreoffice-calc",NULL,NULL,       1 << 5,       False,      False,      -1 },
-	{ "libreoffice-impress",NULL,NULL,    1 << 5,       False,      False,      -1 },
-	{ "libreoffice-startcenter",NULL,NULL,1 << 5,       False,      False,      -1 },
-	{ "libreoffice-writer",NULL,NULL,     1 << 5,       False,      False,      -1 },
-	{ "Gbdfed",   NULL,       NULL,       1 << 6,       True,       True,       -1 },
-	{ "Gimp",     NULL,       NULL,       1 << 6,       True,       False,      -1 },
-	{ "fontforge",NULL,       NULL,       1 << 6,       True,       True,       -1 },
-	{ "inkscape", NULL,       NULL,       1 << 6,       True,       False,      -1 },
-	{ "URxvt",    "ranger",   NULL,       1 << 7,       False,      False,      -1 },
+	{ "Gbdfed",   NULL,       NULL,       1 << 5,       True,       True,       -1 },
+	{ "Gimp",     NULL,       NULL,       1 << 5,       True,       False,      -1 },
+	{ "fontforge",NULL,       NULL,       1 << 5,       True,       True,       -1 },
+	{ "inkscape", NULL,       NULL,       1 << 5,       True,       False,      -1 },
+	{ "URxvt",    "ranger",   NULL,       1 << 6,       False,      False,      -1 },
 };
 
 /* layout(s) */
@@ -85,7 +86,7 @@ static Key keys[] = {
 	/* modifier               key               function        argument */
   { MODKEY,                 XK_o,             spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,       XK_Return,        spawn,          {.v = termcmd } },
-	{ MODKEY,                 XK_x,             togglescratch,  {.v = scratchpadcmd} },
+	{ MODKEY,                 XK_s,             togglescratch,  {.v = scratchpadcmd} },
   { MODKEY,                 XK_apostrophe,    spawn,          {.v = volupcmd } },
   { MODKEY,                 XK_semicolon,     spawn,          {.v = voldncmd } },
   { MODKEY,                 XK_slash,         spawn,          {.v = mpctog } },
@@ -96,8 +97,8 @@ static Key keys[] = {
 	{ MODKEY,                 XK_k,             focusstack,     {.i = -1 } },
   { MODKEY|ShiftMask,       XK_j,             pushdown,       {0} },
   { MODKEY|ShiftMask,       XK_k,             pushup,         {0} },
-	{ MODKEY,                 XK_n,             incnmaster,     {.i = +1 } },
-	{ MODKEY|ShiftMask,       XK_n,             incnmaster,     {.i = -1 } },
+	{ MODKEY,                 XK_i,             incnmaster,     {.i = +1 } },
+	{ MODKEY,                 XK_d,             incnmaster,     {.i = -1 } },
 	{ MODKEY,                 XK_h,             setmfact,       {.f = -0.05} },
 	{ MODKEY,                 XK_l,             setmfact,       {.f = +0.05} },
 	{ MODKEY,                 XK_Return,        zoom,           {0} },
@@ -119,13 +120,13 @@ static Key keys[] = {
 	TAGKEYS(                  XK_1,                             0)
 	TAGKEYS(                  XK_2,                             1)
 	TAGKEYS(                  XK_3,                             2)
-	TAGKEYS(                  XK_q,                             3)
-	TAGKEYS(                  XK_w,                             4)
-	TAGKEYS(                  XK_e,                             5)
-	TAGKEYS(                  XK_a,                             6)
-	TAGKEYS(                  XK_s,                             7)
-	TAGKEYS(                  XK_d,                             8)
-	{ MODKEY|ShiftMask,       XK_z,             quit,           {0} },
+	TAGKEYS(                  XK_4,                             3)
+	TAGKEYS(                  XK_5,                             4)
+	TAGKEYS(                  XK_6,                             5)
+	TAGKEYS(                  XK_7,                             6)
+	TAGKEYS(                  XK_8,                             7)
+	TAGKEYS(                  XK_9,                             8)
+	{ MODKEY|ShiftMask,       XK_q,             quit,           {0} },
 };
 
 /* button definitions */
