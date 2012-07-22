@@ -2,15 +2,23 @@
 
 /* appearance */
 static const char font[] = "-*-terminus2-medium-r-*-*-12-*-*-*-*-*-*-*";
-#define NUMCOLORS 6
+#define NUMCOLORS 14
 static const char colors[NUMCOLORS][ColLast][9] = {
   // border foreground background
-  { "#292929", "#888888", "#151515" }, // 1 = normal (grey on black)
-  { "#fad07a", "#e8e8d3", "#151515" }, // 2 = selected (white on black)
-  { "#dc322f", "#151515", "#fad07a" }, // 3 = urgent (black on yellow)
-  { "#292929", "#888888", "#292929" }, // 4 = lightgrey on brightblack
-  { "#292929", "#292929", "#151515" }, // 5 = brightblack on black
-  { "#292929", "#151515", "#292929" }, // 6 = black on brightblack
+  { "#282a2e", "#969896", "#1d1f21" }, // 1 = normal (grey on black)
+  { "#f0c674", "#f0c674", "#1d1f21" }, // 2 = selected (white on black)
+  { "#dc322f", "#1d1f21", "#cc6666" }, // 3 = urgent (black on red)
+  { "#282a2e", "#c5c8c6", "#1d1f21" }, // 4 = white on black
+  { "#282a2e", "#282a2e", "#1d1f21" }, // 5 = darkgrey on black (triangle)
+  { "#282a2e", "#1d1f21", "#282a2e" }, // 6 = black on darkgrey (triangle)
+  { "#282a2e", "#b294bb", "#282a2e" }, // 7 = magenta on darkgrey
+  { "#282a2e", "#cc6666", "#1d1f21" }, // 8 = red on black
+  { "#282a2e", "#b5bd68", "#1d1f21" }, // 9 = green on black
+  { "#282a2e", "#81a2be", "#282a2e" }, // A = blue on darkgrey
+  { "#282a2e", "#f0c674", "#1d1f21" }, // B = yellow on black
+  { "#282a2e", "#f0c674", "#282a2e" }, // C = yellow on darkgrey
+  { "#282a2e", "#de935f", "#1d1f21" }, // D = orange on black
+  { "#282a2e", "#8abeb7", "#282a2e" }, // E = cyan on darkgrey
 };
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 8;        /* snap pixel */
@@ -35,7 +43,7 @@ static const Rule rules[] = {
 	{ "libreoffice-impress",NULL,NULL,    1 << 3,       False,      False,      -1 },
 	{ "libreoffice-startcenter",NULL,NULL,1 << 3,       False,      False,      -1 },
 	{ "libreoffice-writer",NULL,NULL,     1 << 3,       False,      False,      -1 },
-	{ "mplayer2", NULL,       NULL,       1 << 4,       True,      False,      -1 },
+	{ "mplayer2", NULL,       NULL,       1 << 4,       True,       False,      -1 },
 	{ "Gbdfed",   NULL,       NULL,       1 << 5,       True,       True,       -1 },
 	{ "Gimp",     NULL,       NULL,       1 << 5,       True,       False,      -1 },
 	{ "fontforge",NULL,       NULL,       1 << 5,       True,       True,       -1 },
