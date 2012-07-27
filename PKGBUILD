@@ -23,7 +23,8 @@ _patches=(01-statuscolours.diff
           02-monoclecount.diff
           03-noborder.diff
           04-centredfloating.diff
-          05-scratchpad.diff)
+          05-scratchpad.diff
+          06-attachaside.diff)
 source=(${source[@]} ${_patches[@]})
 
 build() {
@@ -57,7 +58,7 @@ package() {
 }
 md5sums=('8bb00d4142259beb11e13473b81c0857'
          '939f403a71b6e85261d09fc3412269ee'
-         '756abc2e1b3e842620b4493ed512a335'
+         '5c6ec9742f31712ad6052b5c356c6b4a'
          '362e07f0f042875b84d7739d9d8855c4'
          '4ba509b3b93f7b1418dc703c70de536f'
          '689534c579b1782440ddcaf71537d8fd'
@@ -65,4 +66,5 @@ md5sums=('8bb00d4142259beb11e13473b81c0857'
          'e3faeea09a554bbbce29c4d480b0ca41'
          '1f0244803c0188f1b6f4e5794e7f5ca2'
          'ed11483bfccbf65ff9714c0ca4e7bb23'
-         'bc6240f3adadf604a450f6375badec61')
+         'bc6240f3adadf604a450f6375badec61'
+         'a92ee04c33b1082da61b55d3617249eb')
