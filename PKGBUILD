@@ -1,8 +1,3 @@
-# $Id: PKGBUILD 60970 2011-12-19 21:33:58Z spupykin $
-# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
-# Contributor: Dag Odenhall <dag.odenhall@gmail.com>
-# Contributor: Grigorios Bouzakis <grbzks@gmail.com>
-
 pkgname=dwm
 pkgver=6.0
 pkgrel=1
@@ -58,7 +53,7 @@ package() {
 }
 md5sums=('8bb00d4142259beb11e13473b81c0857'
          '939f403a71b6e85261d09fc3412269ee'
-         '5c6ec9742f31712ad6052b5c356c6b4a'
+         'a74e333ec82cc7d00abc382ff34b9abb'
          '362e07f0f042875b84d7739d9d8855c4'
          '4ba509b3b93f7b1418dc703c70de536f'
          '689534c579b1782440ddcaf71537d8fd'

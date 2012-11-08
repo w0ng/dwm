@@ -48,6 +48,7 @@ static const Rule rules[] = {
   { "fontforge",                NULL,        NULL,  1 << 5,   True,       True,       -1 },
   { "inkscape",                 NULL,        NULL,  1 << 5,   True,       False,      -1 },
   { "URxvt",                    "ranger",    NULL,  1 << 6,   False,      False,      -1 },
+  { "Wine",                     NULL,        NULL,  1 << 7,   True,       False,      -1 },
 };
 
 /* layout(s) */
