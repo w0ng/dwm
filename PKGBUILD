@@ -19,7 +19,8 @@ _patches=(01-statuscolours.diff
           03-noborder.diff
           04-centredfloating.diff
           05-scratchpad.diff
-          06-attachaside.diff)
+          06-attachaside.diff
+          07-nopaddedbar.diff)
 source=(${source[@]} ${_patches[@]})
 
 build() {
@@ -62,4 +63,5 @@ md5sums=('8bb00d4142259beb11e13473b81c0857'
          '1f0244803c0188f1b6f4e5794e7f5ca2'
          'ed11483bfccbf65ff9714c0ca4e7bb23'
          'bc6240f3adadf604a450f6375badec61'
-         'a92ee04c33b1082da61b55d3617249eb')
+         'a92ee04c33b1082da61b55d3617249eb'
+         '29213fff0d93fc3a7183948f6c792ac5')

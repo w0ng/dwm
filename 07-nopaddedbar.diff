@@ -1,0 +1,11 @@
+--- dwm.c	2013-01-24 03:49:38.687354654 +1100
++++ dwm.c 2013-01-24 03:49:18.100799514 +1100
+@@ -1665,7 +1665,7 @@ setup(void) {
+ 	initfont(font);
+ 	sw = DisplayWidth(dpy, screen);
+ 	sh = DisplayHeight(dpy, screen);
+-	bh = dc.h = dc.font.height + 2;
++	bh = dc.h = dc.font.height;
+ 	updategeom();
+ 	/* init atoms */
+ 	wmatom[WMProtocols] = XInternAtom(dpy, "WM_PROTOCOLS", False);
