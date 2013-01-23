@@ -1,7 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[] = "-*-terminus2-medium-r-*-*-12-*-*-*-*-*-*-*";
+static const char font[] = "-*-xbmicons-medium-r-*-*-12-*-*-*-*-*-*-*" ","
+                           "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
 #define NUMCOLORS 13
 static const char colors[NUMCOLORS][ColLast][9] = {
   // border foreground background
@@ -25,13 +26,15 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "À", "Á", "Â", "Ã", "È", "Ä", "Å", "Æ","Ç " };
+static const char *tags[] = { "\uE000", "\uE001", "\uE002", "\uE003", "\uE008",
+                              "\uE004", "\uE005", "\uE006","\uE007 " };
 
 static const Rule rules[] = {
   /* class                      instance     title  tags mask isfloating  iscentred   monitor */
   { "feh",                      NULL,        NULL,  0,        True,       True,       -1 },
   { "Gcolor2",                  NULL,        NULL,  0,        True,       True,       -1 },
   { "Lxappearance",             NULL,        NULL,  0,        True,       True,       -1 },
+  { "Screenkey",                NULL,        NULL,  0,        True,       True,       -1 },
   { "XFontSel",                 NULL,        NULL,  0,        True,       True,       -1 },
   { "Xfd",                      NULL,        NULL,  0,        True,       True,       -1 },
   { "Firefox",                  NULL,        NULL,  1,        False,      False,      -1 },
@@ -60,11 +63,11 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 #include "gaplessgrid.c"
 static const Layout layouts[] = {
   /* symbol     arrange function */
-  { "Û É Û",    tile },    /* first entry is default */
-  { "Û Ê Û",    NULL },    /* no layout function means floating behavior */
-  { "Û Ë Û",    monocle },
-  { "Û Ì Û",    bstack },
-  { "Û Í Û",    gaplessgrid },
+  { "\uE019 \uE009 \uE019",    tile },    /* first entry is default */
+  { "\uE019 \uE00A \uE019",    NULL },    /* no layout function means floating behavior */
+  { "\uE019 \uE00B \uE019",    monocle },
+  { "\uE019 \uE00C \uE019",    bstack },
+  { "\uE019 \uE00D \uE019",    gaplessgrid },
 };
 
 /* key definitions */
