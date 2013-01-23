@@ -3,22 +3,27 @@
 /* appearance */
 static const char font[] = "-*-xbmicons-medium-r-*-*-12-*-*-*-*-*-*-*" ","
                            "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
-#define NUMCOLORS 13
+#define NUMCOLORS 18
 static const char colors[NUMCOLORS][ColLast][9] = {
   // border foreground background
   { "#282a2e", "#373b41", "#1d1f21" }, // 1 = normal (grey on black)
   { "#f0c674", "#c5c8c6", "#1d1f21" }, // 2 = selected (white on black)
   { "#dc322f", "#1d1f21", "#f0c674" }, // 3 = urgent (black on yellow)
-  { "#282a2e", "#282a2e", "#1d1f21" }, // 4 = darkgrey on black (triangle)
-  { "#282a2e", "#1d1f21", "#282a2e" }, // 5 = black on darkgrey (triangle)
-  { "#282a2e", "#b294bb", "#282a2e" }, // 6 = magenta on darkgrey
-  { "#282a2e", "#cc6666", "#1d1f21" }, // 7 = red on black
-  { "#282a2e", "#b5bd68", "#1d1f21" }, // 8 = green on black
-  { "#282a2e", "#81a2be", "#282a2e" }, // 9 = blue on darkgrey
-  { "#282a2e", "#f0c674", "#1d1f21" }, // A = yellow on black
-  { "#282a2e", "#f0c674", "#282a2e" }, // B = yellow on darkgrey
-  { "#282a2e", "#de935f", "#1d1f21" }, // C = orange on black
-  { "#282a2e", "#8abeb7", "#282a2e" }, // D = cyan on darkgrey
+  { "#282a2e", "#282a2e", "#1d1f21" }, // 4 = darkgrey on black
+  { "#282a2e", "#cc6666", "#282a2e" }, // 5 = red on darkgrey
+  { "#282a2e", "#b5bd68", "#282a2e" }, // 6 = green on darkgrey
+  { "#282a2e", "#f0c674", "#282a2e" }, // 7 = yellow on darkgrey
+  { "#282a2e", "#81a2be", "#282a2e" }, // 8 = blue on darkgrey
+  { "#282a2e", "#b294bb", "#282a2e" }, // 9 = magenta on darkgrey
+  { "#282a2e", "#8abeb7", "#282a2e" }, // A = cyan on darkgrey
+  { "#282a2e", "#A54242", "#282a2e" }, // B = darkred on darkgrey
+  { "#282a2e", "#8C9440", "#282a2e" }, // C = darkgreen on darkgrey
+  { "#282a2e", "#DE935F", "#282a2e" }, // D = darkyellow on darkgrey
+  { "#282a2e", "#5F819D", "#282a2e" }, // E = darkblue on darkgrey
+  { "#282a2e", "#85678F", "#282a2e" }, // F = darkmagenta on darkgrey
+  { "#282a2e", "#5E8D87", "#282a2e" }, //10 = darkcyan on darkgrey
+  { "#282a2e", "#969896", "#282a2e" }, //11 = lightgrey on darkgrey
+  { "#282a2e", "#C5C8C6", "#282a2e" }  //12 = white on darkgrey
 };
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 8;        /* snap pixel */
