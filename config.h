@@ -6,18 +6,18 @@ static const char font[] = "-*-xbmicons-medium-r-*-*-12-*-*-*-*-*-*-*" ","
 #define NUMCOLORS 12
 static const char colors[NUMCOLORS][ColLast][9] = {
   // border foreground background
-  { "#282a2e", "#373b41", "#1d1f21" }, // 1 = normal (grey on black)
-  { "#f0c674", "#c5c8c6", "#1d1f21" }, // 2 = selected (white on black)
-  { "#dc322f", "#1d1f21", "#f0c674" }, // 3 = urgent (black on yellow)
-  { "#282a2e", "#282a2e", "#1d1f21" }, // 4 = darkgrey on black (for glyphs)
-  { "#282a2e", "#1d1f21", "#282a2e" }, // 5 = black on darkgrey (for glyphs)
-  { "#282a2e", "#cc6666", "#1d1f21" }, // 6 = red on black
-  { "#282a2e", "#b5bd68", "#1d1f21" }, // 7 = green on black
-  { "#282a2e", "#de935f", "#1d1f21" }, // 8 = orange on black
-  { "#282a2e", "#f0c674", "#282a2e" }, // 9 = yellow on darkgrey
-  { "#282a2e", "#81a2be", "#282a2e" }, // A = blue on darkgrey
-  { "#282a2e", "#b294bb", "#282a2e" }, // B = magenta on darkgrey
-  { "#282a2e", "#8abeb7", "#282a2e" }, // C = cyan on darkgrey
+  { "#2D3C46", "#425059", "#232C31" }, // 1 = normal (grey on black)
+  { "#f0c674", "#c5c8c6", "#232C31" }, // 2 = selected (white on black)
+  { "#dc322f", "#232C31", "#f0c674" }, // 3 = urgent (black on yellow)
+  { "#2D3C46", "#2D3C46", "#232C31" }, // 4 = darkgrey on black (for glyphs)
+  { "#2D3C46", "#232C31", "#2D3C46" }, // 5 = black on darkgrey (for glyphs)
+  { "#2D3C46", "#cc6666", "#232C31" }, // 6 = red on black
+  { "#2D3C46", "#b5bd68", "#232C31" }, // 7 = green on black
+  { "#2D3C46", "#de935f", "#232C31" }, // 8 = orange on black
+  { "#2D3C46", "#f0c674", "#2D3C46" }, // 9 = yellow on darkgrey
+  { "#2D3C46", "#81a2be", "#2D3C46" }, // A = blue on darkgrey
+  { "#2D3C46", "#b294bb", "#2D3C46" }, // B = magenta on darkgrey
+  { "#2D3C46", "#8abeb7", "#2D3C46" }, // C = cyan on darkgrey
 };
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 8;        /* snap pixel */
