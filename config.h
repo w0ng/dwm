@@ -2,7 +2,7 @@
 
 /* appearance */
 static const char font[] = "-*-xbmicons-medium-r-*-*-12-*-*-*-*-*-*-*" ","
-                           "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
+                           "-*-tamsyn-medium-*-*-*-14-*-*-*-*-*-*-*";
 #define NUMCOLORS 12
 static const char colors[NUMCOLORS][ColLast][9] = {
   // border foreground background
@@ -64,11 +64,11 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 #include "gaplessgrid.c"
 static const Layout layouts[] = {
   /* symbol     arrange function */
-  { "\uE019 \uE009 \uE019",    tile },    /* first entry is default */
-  { "\uE019 \uE00A \uE019",    NULL },    /* no layout function means floating behavior */
-  { "\uE019 \uE00B \uE019",    monocle },
-  { "\uE019 \uE00C \uE019",    bstack },
-  { "\uE019 \uE00D \uE019",    gaplessgrid },
+  { "\uE020 \uE009 \uE020",    tile },    /* first entry is default */
+  { "\uE020 \uE00A \uE020",    NULL },    /* no layout function means floating behavior */
+  { "\uE020 \uE00B \uE020",    monocle },
+  { "\uE020 \uE00C \uE020",    bstack },
+  { "\uE020 \uE00D \uE020",    gaplessgrid },
 };
 
 /* key definitions */
