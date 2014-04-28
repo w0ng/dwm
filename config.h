@@ -2,7 +2,7 @@
 
 /* appearance */
 static const char font[] = "-*-xbmicons-medium-r-*-*-12-*-*-*-*-*-*-*" ","
-                           "-*-tamsyn-medium-*-*-*-14-*-*-*-*-*-*-*";
+                           "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
 #define NUMCOLORS 12
 static const char colors[NUMCOLORS][ColLast][9] = {
   // border foreground background
