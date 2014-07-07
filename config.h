@@ -43,6 +43,8 @@ static const Rule rules[] = {
   { "libreoffice-startcenter",  NULL,        NULL,  1 << 3,   False,      False,      -1 },
   { "libreoffice-writer",       NULL,        NULL,  1 << 3,   False,      False,      -1 },
   { "mpv",                      NULL,        NULL,  1 << 4,   False,      False,      -1 },
+  { "TeamViewer.exe",           NULL,        NULL,  1 << 5,   True,       False,      -1 },
+  { "Wine",                     NULL,        NULL,  1 << 5,   True,       False,      -1 },
   { "Gimp",                     NULL,        NULL,  1 << 5,   True,       False,      -1 },
   { "URxvt",                    "filemgr",   NULL,  1 << 6,   False,      False,      -1 },
 };
