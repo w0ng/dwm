@@ -49,6 +49,7 @@ static const Rule rules[] = {
   { "Wine",                     NULL,        NULL,  1 << 5,   True,       False,      -1 },
   { "URxvt",                    "filemgr",   NULL,  1 << 6,   False,      False,      -1 },
   { "Chromium",                 NULL,        NULL,  1 << 7,   False,      False,      -1 },
+  { "Google-chrome-stable",     NULL,        NULL,  1 << 7,   False,      False,      -1 },
 };
 
 /* layout(s) */
