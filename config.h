@@ -45,6 +45,7 @@ static const Rule rules[] = {
   { "mpv",                      NULL,        NULL,  1 << 4,   False,      False,      -1 },
   { "fontforge",                NULL,        NULL,  1 << 5,   True,       False,      -1 },
   { "Gimp",                     NULL,        NULL,  1 << 5,   True,       False,      -1 },
+  { "PacketTracer6",            NULL,        NULL,  1 << 5,   True,       True,       -1 },
   { "TeamViewer.exe",           NULL,        NULL,  1 << 5,   True,       False,      -1 },
   { "Wine",                     NULL,        NULL,  1 << 5,   True,       False,      -1 },
   { "URxvt",                    "filemgr",   NULL,  1 << 6,   False,      False,      -1 },
