@@ -85,11 +85,11 @@ static const char  *dmenucmd[]     = { "dmenu_run", "-fn", font, "-nb", colors[0
 static const char *termcmd[]       = { "urxvtc", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geometry", "100x25", NULL };
-static const char *volupcmd[]      = { "amixer", "-q", "set", "PCM", "5%+", NULL };
-static const char *voldncmd[]      = { "amixer", "-q", "set", "PCM", "5%-", NULL };
-static const char *mpctog[]        = { "ncmpcpp", "toggle", NULL };
-static const char *mpcprev[]       = { "ncmpcpp", "prev", NULL };
-static const char *mpcnext[]       = { "ncmpcpp", "next", NULL };
+static const char *volupcmd[]      = { "mpc", "-q", "volume", "+5", NULL };
+static const char *voldncmd[]      = { "mpc", "-q", "volume", "-5", NULL };
+static const char *mpctog[]        = { "mpc", "-q", "toggle", NULL };
+static const char *mpcprev[]       = { "mpc", "-q", "prev", NULL };
+static const char *mpcnext[]       = { "mpc", "-q", "next", NULL };
 
 #include "push.c"
 static Key keys[] = {
