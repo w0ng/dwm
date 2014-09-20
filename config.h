@@ -38,6 +38,7 @@ static const Rule rules[] = {
   { "URxvt",                    "ircmailbt", NULL,  1 << 1,   False,      False,      -1 },
   { "Gvim",                     NULL,        NULL,  1 << 2,   False,      False,      -1 },
   { "Zathura",                  NULL,        NULL,  1 << 3,   False,      False,      -1 },
+  { "jetbrains-android-studio", NULL,        NULL,  1 << 3,   False,      False,      -1 },
   { "libreoffice-calc",         NULL,        NULL,  1 << 3,   False,      False,      -1 },
   { "libreoffice-impress",      NULL,        NULL,  1 << 3,   False,      False,      -1 },
   { "libreoffice-startcenter",  NULL,        NULL,  1 << 3,   False,      False,      -1 },
